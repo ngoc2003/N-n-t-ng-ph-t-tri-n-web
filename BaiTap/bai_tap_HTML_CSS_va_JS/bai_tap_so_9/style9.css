@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+}
+.section1,
+.section2 {
+  display: inline-flex;
+  flex-direction: column;
+}
+.section1 span,
+.section2 span {
+  color: #fff;
+  padding: 10px;
+  border: 0.5px solid rgba(128, 128, 128, 0.658);
+}
+
+.section1 span {
+  background-color: #00009a;
+}
+.section2 span {
+  display: none;
+  background-color: #c00;
+}
+.section1 span:hover {
+  background-color: #c00;
+}
+.section1:hover + .section2 span {
+  display: flex;
+}
+.section1 .active {
+  background-color: #c00;
+}
+.section2 {
+}
