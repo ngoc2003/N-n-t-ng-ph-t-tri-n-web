@@ -2,30 +2,29 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  list-style-type: none;
 }
-.container div {
+.container > li {
+  position: relative;
   background-color: #00009a;
-  color: #fff;
+  color: #e6d7d7;
   padding: 10px;
   border: 0.5px solid rgba(128, 128, 128, 0.658);
+  float: left;
 }
-.container div:hover {
+
+.container li .sub-menu {
+  left: 0;
+  margin-top: 10px;
+  width: 150px;
+  position: absolute;
   background-color: #c00;
-}
-.container .active {
-  background-color: #c00;
-}
-.container {
-  display: flex;
-}
-.dropdown {
   display: none;
 }
-.container:hover + .dropdown {
-  display: flex;
+
+.container > li:hover > .sub-menu {
+  display: block;
 }
-.dropdown div {
-  background-color: #c00;
-  color: #fff;
+.sub-menu li {
   padding: 10px;
 }
