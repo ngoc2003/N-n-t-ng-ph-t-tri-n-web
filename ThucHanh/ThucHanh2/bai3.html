@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 3</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      img {
+        position: absolute;
+      }
+      .img1 {
+        top: 50%;
+        transform: translateY(-50%);
+        animation: slideVerticle 2s linear infinite;
+      }
+      .img2 {
+        left: 50%;
+        transform: translateX(-50%);
+        animation: slideHorizontal 2s linear infinite;
+      }
+      @keyframes slideVerticle {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+      @keyframes slideHorizontal {
+        0% {
+          top: 0;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img class="img1" width="200px" src="./image1.jpeg" alt="" />
+    <img class="img2" width="200px" src="./image2.jpeg" alt="" />
+  </body>
+</html>
