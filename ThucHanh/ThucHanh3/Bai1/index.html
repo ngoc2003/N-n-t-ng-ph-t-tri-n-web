@@ -116,6 +116,7 @@
   <script>
     const form = document.forms["form"];
     const tableBody = document.querySelector("table tbody");
+    const resetValueButton = document.querySelector("button[type='reset']");
     const list = [];
 
     function handleAddNewRow() {
@@ -147,6 +148,7 @@
             ${newTableRow}
             `
       );
+      resetValueButton.click();
     }
 
     function handleChangeToInValidValidate(name) {
