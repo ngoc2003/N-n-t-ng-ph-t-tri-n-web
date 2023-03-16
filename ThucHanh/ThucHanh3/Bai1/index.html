@@ -117,20 +117,12 @@
     const form = document.forms["form"];
     const tableBody = document.querySelector("table tbody");
     const resetValueButton = document.querySelector("button[type='reset']");
-    const list = [];
+    const list = JSON.parse(localStorage.getItem("listCar")) || [];
+    list.forEach((item) => {
+      handleAddNewRow(item);
+    });
 
-    function handleAddNewRow() {
-      const newVal = {
-        nameCar: form["nameCar"]?.value || "",
-        imageLink: form["imageLink"]?.value || "",
-        carCompany: form["carCompany"]?.value || "",
-        cost: form["cost"]?.value || "",
-        description: form["description"]?.value || "",
-        person: form["person"]?.value || "",
-        phoneNumber: form["phoneNumber"]?.value || "",
-        email: form["email"]?.value || "",
-      };
-      list.push(newVal);
+    function handleAddNewRow(newVal) {
       const newTableRow = Object.values(newVal)
         .map((item) => {
           if (item === newVal["imageLink"]) {
@@ -148,7 +140,6 @@
             ${newTableRow}
             `
       );
-      resetValueButton.click();
     }
 
     function handleChangeToInValidValidate(name) {
@@ -202,7 +193,20 @@
         }
 
         if (!document.querySelector(".is-invalid")) {
-          handleAddNewRow();
+          const newVal = {
+            nameCar: form["nameCar"]?.value || "",
+            imageLink: form["imageLink"]?.value || "",
+            carCompany: form["carCompany"]?.value || "",
+            cost: form["cost"]?.value || "",
+            description: form["description"]?.value || "",
+            person: form["person"]?.value || "",
+            phoneNumber: form["phoneNumber"]?.value || "",
+            email: form["email"]?.value || "",
+          };
+          list.push(newVal);
+          handleAddNewRow(newVal);
+          localStorage.setItem("listCar", JSON.stringify(list));
+          resetValueButton.click();
         }
       },
       false
