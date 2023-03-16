@@ -172,7 +172,7 @@
         emailInput.innerText = "Đây là trường bắt buộc";
         emailInput.classList.add("error-email");
       } else {
-        if (/.+@[a-z]{1,20}\.com/.test(form["email"].value)) {
+        if (/[\D].+@[a-z]+\.+[a-z]{2,4}/.test(form["email"].value)) {
           emailInput.classList.remove("error-email");
         } else {
           emailInput.innerText = "Email cần có định dạng xyz@gmail.com";
