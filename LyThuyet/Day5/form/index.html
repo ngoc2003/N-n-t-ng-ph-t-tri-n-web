@@ -125,13 +125,24 @@
         </p>
       </section>
       <form name="form" action="" method="get" onsubmit="return submitForm()">
-        <input type="text" placeholder="Họ và tên" name="name" />
+        <input
+          type="text"
+          placeholder="Họ và tên"
+          name="name"
+        />
         <div id="name" class="error">Vui lòng nhập tên</div>
 
-        <input type="text" placeholder="Email" name="email" />
+        <input
+          type="text"
+          placeholder="Email"
+          name="email"
+        />
         <div id="email" class="error">Vui lòng nhập email</div>
 
-        <input placeholder="Số điện thoại" name="phone-number" />
+        <input
+          placeholder="Số điện thoại"
+          name="phone-number"
+        />
         <div id="phone-number" class="error"></div>
 
         <textarea
@@ -148,13 +159,12 @@
     </div>
   </body>
   <script>
+    const form = document.forms["form"];
+    const nameInput = document.querySelector("#name");
+    const emailInput = document.querySelector("#email");
+    const phoneNumberInput = document.querySelector("#phone-number");
+    const noteInput = document.querySelector("#note");
     function submitForm() {
-      const form = document.forms["form"];
-      const nameInput = document.querySelector("#name");
-      const emailInput = document.querySelector("#email");
-      const phoneNumberInput = document.querySelector("#phone-number");
-      const noteInput = document.querySelector("#note");
-
       if (!form["name"].value) {
         nameInput.innerText = "Đây là trường bắt buộc";
         nameInput.classList.add("error-name");
